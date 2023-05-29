@@ -26,8 +26,8 @@ Comment.init(
       type: Datatypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user',
-        key: 'id'
+        model: "user",
+        key: "id",
       }, 
     },
     comment_text: {
@@ -37,7 +37,7 @@ Comment.init(
         len:[4]
       }
     }
-  },
+  }
   {
     sequelize,
     freezeTableName: true,
