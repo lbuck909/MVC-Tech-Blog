@@ -8,9 +8,13 @@ router.get('/', async (req, res) =>
 {
   try {
     //all posts and user data
-    const postData = await Pos
+    res.render('homepage');
+  
   }
-})
+  catch (err) {
+    res.status(500).json(err);
+  }
+    })
 
 
 // get single post
