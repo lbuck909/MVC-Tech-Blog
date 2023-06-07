@@ -4,7 +4,7 @@ const session = require('express-session');
 
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
-const helpers = require('./utils/heplers');
+const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 
 const app = express();
