@@ -96,4 +96,4 @@ router.get('/edit/:id', withAuth, (req, res) => {
     res.render('new-post', { username: req.session.username });
   });
 
-  modeule.exports = router;
+  module.exports = router;
