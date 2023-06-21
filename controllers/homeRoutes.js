@@ -5,6 +5,7 @@ const sequelize = require('../config/connection');
 //get all posts from homepage
 
 router.get('/', (req, res) =>
+
 {
     Post.findAll({
       attributes:[
