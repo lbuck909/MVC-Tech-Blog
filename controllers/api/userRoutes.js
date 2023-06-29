@@ -22,10 +22,43 @@ router.post('/', async (req, res) =>{
 });
 
 //login 
+router.post('/login', (req, res) =>{
+  User.findOne({
+    where: {
+      username: req.body.user_id,
+    },
 
+  }).then((newUser) =>{
+    if(!newUser) {
+      res.status(400).json({ message: 'Id not found!' });
+      return;
+    }
+    //check the given password & sent message if user is wrong
+    const correctPassword = newUser.checkPassword(req.body.password);
+    if(!correctPassword) {
+      res.status(400).json({ message: 'Incorrect Password!' });
+      return;
+      // add the save session to update the app
+    }
+    req.session.save(() =>{
+      req.session.loggedIn = true;
+      req.session.username = newUser.username;
+      req.session.user_id = newUser.id
+      res.json({ user: newUser, message: 'Successfully logged in!' });
+    });
+  });
+});
 
 //logout
-
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 
 
