@@ -33,10 +33,10 @@ router.put('/:id', withAuth, async (req, res) => {
     } else if (newPost === 0) {
       res.status(404).json({ message: "There is no post with this id!" });
     } else {
-      res.status(500).json({ message: "An error has occurred while trying to update this post"});
+      res.status(500).json({ message: "An error has occurred while trying to update this post!"});
     }
     } catch (err) {
-      res.status(500).json({ message: "An error has occurred while updating the post"})
+      res.status(500).json({ message: "An error has occurred with the post!"})
     }
        
 });
