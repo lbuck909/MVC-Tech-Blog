@@ -7,18 +7,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima&display=swap" rel="stylesheet">
-  <title> 🤓 Tech Blog 🤓</title>
+  <title> 🤓 Ingenious Tech Blog 🤓</title>
 </head>
 <body>
   <header>
     <div class="company-logo"> <img class="logo" src="ingenious Technology Logo.png" alt="a colorful brain with curly braces around it"></img> </div>
     <nav class="navbar">
+      {{#if loggedIn}}
       <ul class="nav-items">
         <li class="nav-item"><a href="#" class="nav-link">HOME</a> </li>
         <li class="nav-item"><a href="#" class="nav-link">DASHBOARD</a> </li>
         <li class="nav-item"><a href="#" class="nav-link">LOGOUT</a> </li>
       </ul>
+      <button id="LOGOUT" class="button is-danger">LOGOUT</button>
+      {{else}}
+      <a href="/" class="nav-items">HOMEPAGE</a>
+      <a href="/login" class="button is-primary">LOGIN</a>
+      {{/if}}
     </nav>
   </header>
+  <main>
+    {{{body}}}
+  </main>
 </body>
 </html>
