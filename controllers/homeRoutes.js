@@ -7,29 +7,36 @@ const sequelize = require('../config/connection');
 router.get('/', (req, res) =>
 
 {
-    Post.findAll({
-      attributes:[
-        'id',
-        'title',
-        'created_at',
-        'post_content'
-      ],
-      include: [
-        {
-          model:Comment,
-          attributes: ['id', 'post_id',  'user_id', 'created_at'],
-        },
-        {
-        model: User,
-        attributes: ['username']
-        }
-      ]
+    Post.findAll({}
+      // {
+      // attributes:[
+      //   'id',
+      //   'title',
+      //   'created_at',
+      //   'post_content'
+      // ],
+      // include: [
+      //   {
+      //     model:Comment,
+      //     attributes: ['id', 'post_id',  'user_id', 'created_at'],
+      //   },
+      //   {
+      //   model: User,
+      //   attributes: ['username']
+      //   }
+      // ]
        //all posts and user data
-    })
+    //}
+    )
     .then(dbPostData => {
-      const userPosts = dbPostData.map(post=> post.get({ plain: true}));
+      //const userPosts = dbPostData.map(post=> post.get({ plain: true}));
+      const userPosts =[
+        {title: "title", post_content: "content", user_id: "1234"}
+      ]
+      console.log(userPosts)
       res.render('homepage', {
-        posts, loggedIn: req.session.loggedIn
+        userPosts
+        // posts, loggedIn: req.session.loggedIn
         
       });
     })
@@ -81,7 +88,7 @@ router.get('/post/:id', (req, res) => {
 //get login 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 

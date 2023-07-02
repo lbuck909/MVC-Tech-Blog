@@ -6,10 +6,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima&display=swap" rel="stylesheet">
-  <title> 🤓 Tech Blog 🤓</title>
+<link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>🤓 Ingenious Tech Blog 🤓</title>
   
 </head>
 <body>
-  
+  <header>
+    <div class="wrapper">
+      <h1 id="logo"> Ingenious Tech Blog </h1>
+    <div class="company-logo"> <img src=".\css\stylesheet\Logo.jpg" alt="a colorful brain with curly braces around it"></img> </div>
+    <nav class="navbar">
+      
+      <ul class="nav-items">
+        <li class="nav-item"><a href="#" class="nav-link">HOME</a> </li>
+        <li class="nav-item"><a href="#" class="nav-link">DASHBOARD</a> </li>
+
+      {{#if loggedIn}}
+        <li class="nav-item"><a href="#" class="nav-link">LOGOUT</a> </li>
+      </ul>
+      <button id="LOGOUT" class="button is-danger">LOGOUT</button>
+      {{else}}
+      <a href="/" class="nav-items">HOMEPAGE</a>
+      <a href="/login" class="button is-primary">LOGIN</a>
+      {{/if}}
+    </nav>
+    </div>
+  </header>
+  </header>
+  {{{body}}}
 </body>
 </html>

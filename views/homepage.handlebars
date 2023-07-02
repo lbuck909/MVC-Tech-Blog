@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,4 +30,22 @@
     {{{body}}}
   </main>
 </body>
-</html>
+</html> --}}
+
+<div>
+<h2>Posts</h2>
+
+
+<ul>
+
+{{#each userPosts}}
+
+<li>Title: {{title}}</li>
+<li>Content: {{post_content}}</li>
+<li>User: {{user_id}}</li>
+
+{{/each}}
+
+</ul>
+
+</div>
