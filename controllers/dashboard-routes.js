@@ -44,6 +44,12 @@ router.get('/', withAuth, (req, res) => {
   });
 });
 
+router.get('/new', withAuth, (req, res) => {
+  res.render('new-post', {
+    layout: 'dashboard',
+  });
+});
+
 // edit one post
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({

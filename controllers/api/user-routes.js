@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 //New user info created
-router.get('/', async(req, res)=> {
-  const users = await User.findAll()
-  res.json(users)
-})
+// router.get('/', async(req, res)=> {
+//   const users = await User.findAll()
+//   res.json(users)
+// })
 
 router.post('/', async (req, res) =>{
   try{
