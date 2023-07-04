@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {Post, User, Comment} = require('../models');
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 
 //get all posts from homepage
 
@@ -29,7 +29,7 @@ router.get('/', (req, res) =>
     }
     )
     .then(dbPostData => {
-      // const userPosts = dbPostData.map(post=> post.get({ plain: true}));
+       const userPosts = dbPostData.map(post=> post.get({ plain: true}));
   
       res.render('homepage', {
         
