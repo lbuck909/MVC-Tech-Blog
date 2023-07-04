@@ -1,6 +1,6 @@
 const { Post } = require('../models');
 
-const postSeeds = [
+const postSeed = [
   {
     user_id:1,
     title: "Toddlers that lift weights"
