@@ -2,7 +2,7 @@
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       
-      <h2>{{post.title}}</h2>
+      <h3>{{post.title}}</h3>
       <div>
         Posted by {{post.User.username}} 
          {{format_date post.createdAt}}
@@ -18,7 +18,7 @@
   {{#if post.Comments}}
     <section class="card">
       <div class="cardHeader">
-        <h3>Comments</h3>
+        <h4>Comments</h4>
       </div>
 
       <div class="cardBody">
@@ -27,8 +27,10 @@
             <p>
               {{body}}
             </p>
+            {{!-- username & date needs to go here --}}
             <p>
-              &mdash; {{User.username}}, {{format_date createdAt}}
+              &mdash; {{User.username}}, 
+              {{format_date createdAt}}
             </p>
           </div>
         {{/each}}
@@ -36,20 +38,18 @@
     </section>
   {{/if}}
 
-  <form id="new-comment" class="card">
+  <form id="user-comment" class="card">
     <div class="cardHeader">
       <h3>Add New Comment</h3>
     </div>
 
     <div class="card-body">
       <input type="hidden" name="post-id" value="{{post.id}}" />
-
-      <label class="form-label" for="comment-body">Comment</label>
-
-      <textarea name="comment-body" class="form-input"></textarea>
-
+      <label class="comment-form-label" for="comment-body">Comment</label>
+      <textarea name="new-comment-body" class="form-input"></textarea>
       <button type="submit" class="btn">Submit</button>
     </div>
+    
   </form>
 </div>
 
