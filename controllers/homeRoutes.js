@@ -7,7 +7,7 @@ const sequelize = require('../config/connection');
 router.get('/', (req, res) =>
 
 {
-    Post.findAll({}
+    Post.findAll(
       {
       attributes:[
         'id',
@@ -25,14 +25,14 @@ router.get('/', (req, res) =>
         attributes: ['username']
         }
       ]
-       all posts and user data
+       //all posts and user data
     }
     )
     .then(dbPostData => {
-      const userPosts = dbPostData.map(post=> post.get({ plain: true}));
+      // const userPosts = dbPostData.map(post=> post.get({ plain: true}));
   
       res.render('homepage', {
-        userPosts
+        
         posts, loggedIn: req.session.loggedIn
         
       });
