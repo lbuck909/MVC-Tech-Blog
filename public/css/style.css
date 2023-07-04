@@ -3,7 +3,7 @@
   --secondary: #F8EFBA;
   --tertiary: #788585;
   --light-dark: #58B19F;
-  --dark: #38302e;
+  --dark: #227093;
   --border-radius: 0.3rem;
 }
 body {
@@ -94,4 +94,46 @@ main {
 
 .nav-item a {
   color: var(--primary);
+
+}
+
+*/form design*/
+/* FORM */
+.form-label,
+.form-input,
+.form-textarea {
+  margin: 0 0 0;
+  display: block;
+}
+
+.form-label {
+  font-size: 1rem;
+  margin: 0 0 0 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 2%;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  border: 4px solid var(--light-dark);
+  border-radius: var(--border-radius);
+}
+
+/*Card design*/
+.card {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+}
+
+.card-header {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 1%;
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-body {
+  padding: 1%;
 }
