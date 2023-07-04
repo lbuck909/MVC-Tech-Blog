@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima&display=swap" rel="stylesheet">
@@ -12,13 +13,13 @@
   
 </head>
 <body>
-  <header>
-    <div class="wrapper">
-      <h1 id="logo"> Ingenious Tech Blog </h1>
-    <div class="company-logo"> <img src=".\css\stylesheet\Logo.jpg" alt="a colorful brain with curly braces around it"></img> </div>
+  <header class="hero"> 
+  
+      <h2> Ingenious Tech Blog </h2>
+    <div class="logo"> <img src=".\css\stylesheet\Logo.jpg" alt="a colorful brain with curly braces around it">
+  </header>
     <nav class="navbar">
-      
-      <ul class="nav-items">
+      <ul class="nav justify-content-end">
         <li class="nav-item"><a href="#" class="nav-link">HOME</a> </li>
         <li class="nav-item"><a href="#" class="nav-link">DASHBOARD</a> </li>
 
@@ -27,13 +28,16 @@
       </ul>
       <button id="LOGOUT" class="button is-danger">LOGOUT</button>
       {{else}}
-      <a href="/" class="nav-items">HOMEPAGE</a>
-      <a href="/login" class="button is-primary">LOGIN</a>
+      {{!-- <a href="/" class="nav-items">HOMEPAGE</a> --}}
+      <button class="btn btn-secondary btn-sm" type="submit">LOGIN</button>
       {{/if}}
     </nav>
     </div>
-  </header>
-  </header>
+  
+  
   {{{body}}}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
