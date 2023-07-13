@@ -37,6 +37,6 @@ const commentSeeds = [
     comment_text: "I agree with you!"
   },
 ]
-const commentSeedData = () => Comment.bulkCreate(commentData);
+const commentSeedData = () => Comment.bulkCreate(commentSeeds);
 
 module.exports = commentSeedData;
