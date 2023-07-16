@@ -3,8 +3,8 @@ const { User, Post, Comment } = require('../../models');
 
 // New user info created
 router.get('/', async(req, res)=> {
-  const users = await User.findAll()
-  res.json(users)
+  const user = await User.findAll()
+  res.json(user)
 })
 
 router.post('/', async (req, res) =>{
