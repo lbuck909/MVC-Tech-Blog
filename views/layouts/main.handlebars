@@ -23,12 +23,13 @@
 
       {{#if loggedIn}}
         <li class="nav-item"><a href="#" class="nav-link">LOGOUT</a> </li>
-      </ul>
-      <button id="LOGOUT" class="button is-danger">LOGOUT</button>
+      
+      {{!-- <button id="LOGOUT" class="btn btn-secondary btn-sm">LOGOUT</button> --}}
       {{else}}
       {{!-- <a href="/" class="nav-items">HOMEPAGE</a> --}}
-      <button class="btn btn-secondary btn-sm" type="submit">LOGIN</button>
+      <li class="nav-item"><button class="btn btn-secondary btn-sm" type="submit">LOGIN</button> </li>
       {{/if}}
+      </ul>
     </nav>
 
     <header class="hero"> 
