@@ -29,7 +29,7 @@ const postSeed = [
   {
     "user_id": 6,
     "title": "The last 20 pounds",
-    "post_content": "I've lost 20 pounds at least fives in my life. Does that count as me losing 100 pounds?"
+    "post_content": "I've lost 20 pounds at least five times in my life. Does that count as me losing 100 pounds?"
   },
   {
     "user_id": 7,
