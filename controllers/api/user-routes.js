@@ -12,8 +12,7 @@ router.post('/', async (req, res) =>{
     console.log(req.body)
     const newUser = await User.create({
       username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
+       password: req.body.password,
     });
     req.session.user_id = newUser.id;
     req.session.username = newUser.username;
@@ -32,7 +31,7 @@ router.post('/', async (req, res) =>{
 router.post('/login', (req, res) =>{
   User.findOne({
     where: {
-      username: req.body.user_id,
+      username: req.body.username,
     },
 
   }).then((newUser) =>{
@@ -42,15 +41,17 @@ router.post('/login', (req, res) =>{
     }
     //check the given password & sent message if user is wrong
     const correctPassword = newUser.checkPassword(req.body.password);
-    if(!correctPassword) {
+    // if(!correctPassword) {
+      if(newUser.password=== req.body.password){
       res.status(400).json({ message: 'Incorrect Password!' });
       return;
       // add the save session to update the app
     }
-    req.session.save(() =>{
-      req.session.loggedIn = true;
+    req.session.loggedIn = true;
       req.session.username = newUser.username;
       req.session.user_id = newUser.id
+    req.session.save(() =>{
+      
       res.json({ user: newUser, message: 'Successfully logged in!' });
     });
   });

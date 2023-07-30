@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 // all user posts from dasboard
 router.get('/', withAuth, (req, res) => {
-  Post.findAll({
+   Post.findAll({
     where: {
       user_id: req.session.user_id,
     },
@@ -36,14 +36,14 @@ router.get('/', withAuth, (req, res) => {
   })
   .then((dbPostData) => {
     const posts = dbPostData.map((post) => post.get({ plain:true }));
-    res.render('all-posts-admin', { 
-      layout: 'dashboard',
+    res.render('dashboard', { 
+      // layout: 'dashboard',
        posts, 
        loggedIn: true, 
        username: req.session.username});
   })
   .catch((err) => {
-    console.log (error);
+    console.log (err);
     res.redirect('login');
   });
 });
