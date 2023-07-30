@@ -12,3 +12,6 @@
 This project resembles a Wix site designed for developers in the tech industry to publish their blog posts. Developers can engage in discussions by commenting on other posts within the application. The project follows the MVC (Model-View-Controller) architecture, utilizing technologies such as Handlebars, Node.js, MySQL, Sequelize, and various npm packages. The deployed version of the app is hosted on Heroku.
 
 ## Screenshot
+![Login Page](/assets/Login1.png);
+
+![Home Handlebars](/assets/homeHandlebars.png);
